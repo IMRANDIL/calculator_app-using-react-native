@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Switch, Text, TouchableOpacity, View} from 'react-native';
+import {Alert, Switch, Text, TouchableOpacity, View} from 'react-native';
 
 const App = () => {
   const [darkTheme, setDarkTheme] = useState(false);
@@ -13,12 +13,31 @@ const App = () => {
     light2: '#F7F7F7',
   };
   const calculate = title => {
-    if (title == 'C') {
+    // Check if input is 'C'
+    if (title === 'C') {
       setResult('');
-    } else if (title == 'DL') {
+    }
+    // Check if input is 'DL'
+    else if (title === 'DL') {
       setResult(result.substring(0, result.length - 1));
-    } else if (title == '=') {
-    } else {
+    }
+    // Check if input is '='
+    else if (title === '=') {
+      // Check if input is a valid mathematical expression
+      try {
+        var ans = eval(result);
+        if (!isFinite(ans)) {
+          Alert.alert('Invalid Expression');
+        } else {
+          ans = Number(ans.toFixed(3)).toString();
+          setResult(ans);
+        }
+      } catch (err) {
+        Alert.alert('Invalid Expression');
+      }
+    }
+    // Else, input is a number or operator
+    else {
       setResult(result + title);
     }
   };
