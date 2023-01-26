@@ -3,7 +3,7 @@ import {Switch, Text, TouchableOpacity, View} from 'react-native';
 
 const App = () => {
   const [darkTheme, setDarkTheme] = useState(false);
-  const [result, setResult] = useState('dddd');
+  const [result, setResult] = useState('');
   const colors = {
     dark: '#22252D',
     dark1: '#292B36',
@@ -12,12 +12,21 @@ const App = () => {
     light1: '#F1F1F1',
     light2: '#F7F7F7',
   };
-
+  const calculate = title => {
+    if (title == 'C') {
+      setResult('');
+    } else if (title == 'DL') {
+      setResult(result.substring(0, result.length - 1));
+    } else if (title == '=') {
+    } else {
+      setResult(result + title);
+    }
+  };
   const getColor = (dark, light) => (darkTheme ? dark : light);
   const Btn = ({title, type}) => {
     return (
       <TouchableOpacity
-        onPress={() => {}}
+        onPress={() => calculate(title)}
         style={{
           padding: 10,
           elevation: 2,
