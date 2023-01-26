@@ -14,9 +14,10 @@ const App = () => {
   };
 
   const getColor = (dark, light) => (darkTheme ? dark : light);
-  const Btn = ({title}) => {
+  const Btn = ({title, type}) => {
     return (
       <TouchableOpacity
+        onPress={() => {}}
         style={{
           padding: 10,
           elevation: 2,
@@ -29,7 +30,7 @@ const App = () => {
         <Text
           style={{
             fontSize: 37,
-            color: 'black',
+            color: getBtnColor(type),
             textAlign: 'center',
             textAlignVertical: 'center',
           }}>
@@ -37,6 +38,16 @@ const App = () => {
         </Text>
       </TouchableOpacity>
     );
+  };
+
+  const getBtnColor = type => {
+    if (type == 'top') {
+      return 'firebrick';
+    } else if (type == 'right') {
+      return 'firebrick';
+    } else {
+      return getColor(colors.dark, colors.light);
+    }
   };
 
   return (
@@ -61,6 +72,8 @@ const App = () => {
           width: '100%',
           textAlign: 'right',
           paddingRight: 20,
+          paddingBottom: 20,
+          marginTop: 40,
         }}>
         {result}
       </Text>
@@ -73,26 +86,26 @@ const App = () => {
           borderTopLeftRadius: 20,
           backgroundColor: getColor(colors.light1, colors.dark1),
         }}>
-        <Btn title="C" />
-        <Btn title="DL" />
-        <Btn title="/" />
-        <Btn title="%" />
-        <Btn title="7" />
-        <Btn title="8" />
-        <Btn title="9" />
-        <Btn title="*" />
-        <Btn title="4" />
-        <Btn title="5" />
-        <Btn title="6" />
-        <Btn title="-" />
-        <Btn title="1" />
-        <Btn title="2" />
-        <Btn title="3" />
-        <Btn title="+" />
-        <Btn title="00" />
-        <Btn title="0" />
-        <Btn title="." />
-        <Btn title="=" />
+        <Btn title="C" type="top" />
+        <Btn title="DL" type="top" />
+        <Btn title="/" type="top" />
+        <Btn title="%" type="top" />
+        <Btn title="7" type="number" />
+        <Btn title="8" type="number" />
+        <Btn title="9" type="number" />
+        <Btn title="*" type="right" />
+        <Btn title="4" type="number" />
+        <Btn title="5" type="number" />
+        <Btn title="6" type="number" />
+        <Btn title="-" type="right" />
+        <Btn title="1" type="number" />
+        <Btn title="2" type="number" />
+        <Btn title="3" type="number" />
+        <Btn title="+" type="right" />
+        <Btn title="00" type="number" />
+        <Btn title="0" type="number" />
+        <Btn title="." type="number" />
+        <Btn title="=" type="right" />
       </View>
     </View>
   );
