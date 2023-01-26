@@ -65,10 +65,26 @@ const App = () => {
         {result}
       </Text>
       <View style={{flexDirection: 'row', flexWrap: 'wrap'}}>
-        <Btn title={1} />
-        <Btn title={2} />
-        <Btn title={3} />
-        <Btn title={4} />
+        <Btn title="C" />
+        <Btn title="DL" />
+        <Btn title="/" />
+        <Btn title="%" />
+        <Btn title="7" />
+        <Btn title="8" />
+        <Btn title="9" />
+        <Btn title="*" />
+        <Btn title="4" />
+        <Btn title="5" />
+        <Btn title="6" />
+        <Btn title="-" />
+        <Btn title="1" />
+        <Btn title="2" />
+        <Btn title="3" />
+        <Btn title="+" />
+        <Btn title="00" />
+        <Btn title="0" />
+        <Btn title="." />
+        <Btn title="=" />
       </View>
     </View>
   );
