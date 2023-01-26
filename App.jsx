@@ -16,8 +16,25 @@ const App = () => {
   const getColor = (dark, light) => (darkTheme ? dark : light);
   const Btn = ({title}) => {
     return (
-      <TouchableOpacity>
-        <Text style={{fontSize: 37, color: 'black'}}>{title}</Text>
+      <TouchableOpacity
+        style={{
+          padding: 10,
+          elevation: 2,
+          borderRadius: 10,
+          backgroundColor: getColor(colors.light1, colors.dark2),
+          height: 70,
+          width: 70,
+          margin: 16,
+        }}>
+        <Text
+          style={{
+            fontSize: 37,
+            color: 'black',
+            textAlign: 'center',
+            textAlignVertical: 'center',
+          }}>
+          {title}
+        </Text>
       </TouchableOpacity>
     );
   };
