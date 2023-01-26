@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Switch, Text, View} from 'react-native';
+import {Switch, Text, TouchableOpacity, View} from 'react-native';
 
 const App = () => {
   const [darkTheme, setDarkTheme] = useState(false);
@@ -30,9 +30,30 @@ const App = () => {
         thumbColor={getColor(colors.light, colors.dark)}
         trackColor={{true: colors.light2, false: colors.dark2}}
       />
-      <Text style={{fontSize: 40, color: getColor(colors.light, colors.dark)}}>
+      <Text
+        style={{
+          fontSize: 40,
+          color: getColor(colors.light, colors.dark),
+          width: '100%',
+          textAlign: 'right',
+          paddingRight: 20,
+        }}>
         {result}
       </Text>
+      <View style={{flexDirection: 'row', flexWrap: 'wrap'}}>
+        <TouchableOpacity>
+          <Text style={{fontSize: 37, color: 'black'}}>1</Text>
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <Text style={{fontSize: 37, color: 'black'}}>2</Text>
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <Text style={{fontSize: 37, color: 'black'}}>3</Text>
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <Text style={{fontSize: 37, color: 'black'}}>4</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
