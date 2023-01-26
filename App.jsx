@@ -19,7 +19,7 @@ const App = () => {
         width: '100%',
         height: '100%',
         paddingVertical: 10,
-        backgroundColor: darkTheme ? colors.light : colors.dark,
+        backgroundColor: darkTheme ? colors.dark : colors.light,
       }}>
       <Switch
         value={darkTheme}
