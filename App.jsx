@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
-import {Switch, View} from 'react-native';
+import {Switch, Text, View} from 'react-native';
 
 const App = () => {
   const [darkTheme, setDarkTheme] = useState(false);
-
+  const [result, setResult] = useState('');
   const colors = {
     dark: '#22252D',
     dark1: '#292B36',
@@ -28,6 +28,7 @@ const App = () => {
         thumbColor={darkTheme ? colors.light : colors.dark}
         trackColor={{true: colors.light2, false: colors.dark2}}
       />
+      <Text>{result}</Text>
     </View>
   );
 };
