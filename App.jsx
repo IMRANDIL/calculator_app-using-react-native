@@ -14,11 +14,18 @@ const App = () => {
   };
 
   return (
-    <View>
+    <View
+      style={{
+        width: '100%',
+        height: '100%',
+        paddingVertical: 10,
+        backgroundColor: darkTheme ? colors.light : colors.dark,
+      }}>
       <Switch
         value={darkTheme}
         onValueChange={() => setDarkTheme(!darkTheme)}
         thumbColor={darkTheme ? colors.light : colors.dark}
+        trackColor={{true: colors.light2, false: colors.dark2}}
       />
     </View>
   );
