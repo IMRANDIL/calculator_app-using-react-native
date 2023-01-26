@@ -13,22 +13,26 @@ const App = () => {
     light2: '#F7F7F7',
   };
 
+  const getColor = (dark, light) => (darkTheme ? dark : light);
+
   return (
     <View
       style={{
         width: '100%',
         height: '100%',
         paddingVertical: 10,
-        backgroundColor: darkTheme ? colors.dark : colors.light,
+        backgroundColor: getColor(colors.dark, colors.light),
         alignItems: 'center',
       }}>
       <Switch
         value={darkTheme}
         onValueChange={() => setDarkTheme(!darkTheme)}
-        thumbColor={darkTheme ? colors.light : colors.dark}
+        thumbColor={getColor(colors.light, colors.dark)}
         trackColor={{true: colors.light2, false: colors.dark2}}
       />
-      <Text>{result}</Text>
+      <Text style={{fontSize: 25, color: getColor(colors.dark, colors.light)}}>
+        {result}
+      </Text>
     </View>
   );
 };
