@@ -3,7 +3,7 @@ import {Switch, Text, View} from 'react-native';
 
 const App = () => {
   const [darkTheme, setDarkTheme] = useState(false);
-  const [result, setResult] = useState('');
+  const [result, setResult] = useState('dddd');
   const colors = {
     dark: '#22252D',
     dark1: '#292B36',
@@ -30,7 +30,7 @@ const App = () => {
         thumbColor={getColor(colors.light, colors.dark)}
         trackColor={{true: colors.light2, false: colors.dark2}}
       />
-      <Text style={{fontSize: 25, color: getColor(colors.dark, colors.light)}}>
+      <Text style={{fontSize: 40, color: getColor(colors.light, colors.dark)}}>
         {result}
       </Text>
     </View>
