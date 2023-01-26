@@ -5,7 +5,10 @@ const App = () => {
   const [darkTheme, setDarkTheme] = useState(false);
   return (
     <View>
-      <Switch value={darkTheme} />
+      <Switch
+        value={darkTheme}
+        onValueChange={() => setDarkTheme(!darkTheme)}
+      />
     </View>
   );
 };
