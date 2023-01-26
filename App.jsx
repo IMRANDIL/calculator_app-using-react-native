@@ -14,6 +14,13 @@ const App = () => {
   };
 
   const getColor = (dark, light) => (darkTheme ? dark : light);
+  const Btn = ({title}) => {
+    return (
+      <TouchableOpacity>
+        <Text style={{fontSize: 37, color: 'black'}}>{title}</Text>
+      </TouchableOpacity>
+    );
+  };
 
   return (
     <View
@@ -41,18 +48,10 @@ const App = () => {
         {result}
       </Text>
       <View style={{flexDirection: 'row', flexWrap: 'wrap'}}>
-        <TouchableOpacity>
-          <Text style={{fontSize: 37, color: 'black'}}>1</Text>
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <Text style={{fontSize: 37, color: 'black'}}>2</Text>
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <Text style={{fontSize: 37, color: 'black'}}>3</Text>
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <Text style={{fontSize: 37, color: 'black'}}>4</Text>
-        </TouchableOpacity>
+        <Btn title={1} />
+        <Btn title={2} />
+        <Btn title={3} />
+        <Btn title={4} />
       </View>
     </View>
   );
