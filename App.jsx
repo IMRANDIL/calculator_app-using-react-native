@@ -18,6 +18,7 @@ const App = () => {
       <Switch
         value={darkTheme}
         onValueChange={() => setDarkTheme(!darkTheme)}
+        thumbColor={darkTheme ? colors.light : colors.dark}
       />
     </View>
   );
