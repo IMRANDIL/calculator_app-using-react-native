@@ -64,7 +64,15 @@ const App = () => {
         }}>
         {result}
       </Text>
-      <View style={{flexDirection: 'row', flexWrap: 'wrap'}}>
+      <View
+        style={{
+          flexDirection: 'row',
+          flexWrap: 'wrap',
+          justifyContent: 'center',
+          borderTopRightRadius: 20,
+          borderTopLeftRadius: 20,
+          backgroundColor: getColor(colors.light1, colors.dark1),
+        }}>
         <Btn title="C" />
         <Btn title="DL" />
         <Btn title="/" />
